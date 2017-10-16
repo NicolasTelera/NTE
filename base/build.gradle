@@ -1,0 +1,27 @@
+apply plugin: 'com.android.feature'
+
+android {
+    compileSdkVersion project.compileSdkVersion
+    buildToolsVersion project.buildToolsVersion
+    baseFeature true
+    defaultConfig {
+        minSdkVersion project.minSdkVersion
+        targetSdkVersion project.targetSdkVersion
+        versionCode project.appVersion
+        versionName project.versionName
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    api 'com.android.support:appcompat-v7:26.1.0'
+    api 'com.android.support.constraint:constraint-layout:1.0.2'
+    application project(':app')
+    feature project(":home")
+    feature project(":detail")
+}

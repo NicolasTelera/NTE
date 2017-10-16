@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    package="com.nicolastelera.nte.detail"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <meta-data android:name="asset_statements" android:resource="@string/asset_statements"/>
+        <activity android:name=".DetailActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:host="www.nicolas.telera.fr"/>
+                <data android:pathPattern="/detail/.*"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
